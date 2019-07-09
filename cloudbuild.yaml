@@ -19,6 +19,6 @@ steps:
   - '-m'
   - 'flake8'
   - '--ignore=E501'
-  - 'functions/'
+  - 'code/'
   waitFor:
   - INSTALL
