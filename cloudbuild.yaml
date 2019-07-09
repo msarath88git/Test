@@ -1,3 +1,13 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/msarath88git/Test']
+- name: python:3.7
+  entrypoint: python3
+  id: RUN-LINTER-CHECK
+  args:
+  - '-m'
+  - 'flake8'
+  - '--ignore=E501'
+  - 'functions/'
+  waitFor:
+  - INSTALL
