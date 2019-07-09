@@ -14,7 +14,7 @@ f_date=todayDate[0:4]+todayDate[5:7]+todayDate[8:10]
 spark = SparkSession.builder.\
     appName("AnalyticsApp").getOrCreate()
 
-
+#hi
 dfInput = spark.read.format("com.databricks.spark.csv").\
     option("header", "true").\
     option("treatEmptyValuesAsNulls", "true").\
