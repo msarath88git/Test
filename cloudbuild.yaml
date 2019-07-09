@@ -2,6 +2,17 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/msarath88git/Test']
 - name: python:3.7
+  id: INSTALL
+  entrypoint: python3
+  args:
+  - '-m'
+  - 'pip'
+  - 'install'
+  - '-t'
+  - '.'
+  - '-r'
+  - 'functions/requirements.txt'
+- name: python:3.7
   entrypoint: python3
   id: RUN-LINTER-CHECK
   args:
